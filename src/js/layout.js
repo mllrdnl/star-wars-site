@@ -5,10 +5,16 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import { PeopleList } from "./views/peopleList";
+import { PeoplePage } from "./views/peoplepage";
+import { PlanetsList } from "./views/planetsList";
+import { PlanetsPage } from "./views/planetsPage";
+import { VehiclesList } from "./views/vehiclesList";
+import { VehiclesPage } from "./views/vehiclesPage";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+// import { Navbar } from "./component/navbar";
+// import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -20,22 +26,39 @@ const Layout = () => {
 		<div className="d-flex flex-column">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
 					<Switch>
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+
+						<Route exact path="/people">
+							<PeopleList />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+
+						<Route exact path="/people/:id">
+							<PeoplePage />
 						</Route>
+
+						<Route exact path="/vehicles">
+							<VehiclesList />
+						</Route>
+
+						<Route exact path="/vehicles/:id">
+							<VehiclesPage />
+						</Route>
+
+						<Route exact path="/planets">
+							<PlanetsList />
+						</Route>
+
+						<Route exact path="/planets/:id">
+							<PlanetsPage />
+						</Route>
+
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
