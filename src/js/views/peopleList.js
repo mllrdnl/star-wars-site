@@ -14,18 +14,26 @@ export function PeopleList() {
 	}, []);
 
 	return (
-		<div className="container">
-			<ul>
+		<div className="container-fluid">
+			<div className="card-group">
 				{people.map((person, index) => {
 					return (
-						<li key={index}>
-							<div className="row">
-								<div className="col">{person.name}</div>
+						<div key={index} className="card">
+							<img src="..." className="card-img-top" alt="..." />
+							<div className="card-body">
+								<h5 className="card-title">{person.name}</h5>
+								<p className="card-text">
+									This is a wider card with supporting text below as a natural lead-in to additional
+									content. This content is a little bit longer.
+								</p>
+								<p className="card-text">
+									<small className="text-muted">Last updated 3 mins ago</small>
+								</p>
 							</div>
-						</li>
+						</div>
 					);
 				})}
-			</ul>
+			</div>
 		</div>
 	);
 }
