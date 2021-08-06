@@ -15,6 +15,7 @@ export function PeopleList() {
 
 	return (
 		<div className="container-fluid">
+			<h1>Characters</h1>
 			<div className="card-group">
 				{people.map((person, index) => {
 					return (
@@ -23,8 +24,9 @@ export function PeopleList() {
 							<div className="card-body">
 								<h5 className="card-title">{person.name}</h5>
 								<p className="card-text">
-									This is a wider card with supporting text below as a natural lead-in to additional
-									content. This content is a little bit longer.
+									<a className="btn btn-primary" href={"/people/" + person.uid} role="button">
+										Learn More!
+									</a>
 								</p>
 								<p className="card-text">
 									<small className="text-muted">Last updated 3 mins ago</small>

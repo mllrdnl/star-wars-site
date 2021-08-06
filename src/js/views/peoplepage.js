@@ -6,5 +6,25 @@ import { Context } from "../store/appContext";
 export function PeoplePage() {
 	const params = useParams();
 
-	return <h1>Page for People: {params.id}</h1>;
+	const [people, setPeople] = useState(null);
+
+	React.useEffect(() => {
+		fetch("https://www.swapi.tech/api/people/" + params.id)
+			.then(res => res.json())
+			.then(data => setPeople(data.result.properties))
+			.catch(err => console.error(err));
+	}, []);
+
+	return (
+		<div className="container-fluid">
+			{/* <h1>Page for People: { params.id }</h1> */}
+
+			<div className="row">
+				<div className="col">
+					<p>Name: {people !== null ? people.name : null}</p>
+				</div>
+				<div className="col"></div>
+			</div>
+		</div>
+	);
 }
