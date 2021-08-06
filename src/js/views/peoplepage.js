@@ -17,8 +17,6 @@ export function PeoplePage() {
 
 	return (
 		<div className="container-fluid">
-			{/* <h1>Page for People: { params.id }</h1> */}
-
 			<div className="row">
 				<div className="col">
 					<p>Name: {people !== null ? people.name : null}</p>
