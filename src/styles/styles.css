@@ -6,6 +6,11 @@
     display: flex;
 }
 
+.container {
+    display: flex;
+    /* flex-direction: row; */
+}
+
 .card-block {
     width: 400px;
     height: 250px;

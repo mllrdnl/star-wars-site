@@ -16,11 +16,11 @@ export function PeopleList() {
 	return (
 		<div className="container-fluid">
 			<h1>Characters</h1>
-			<div className="scrolling-wrapper row flex-row flex-nowrap mb-2">
+			<div className="flex-row d-inline-flex flex-nowrap">
 				{people.map((person, index) => {
 					return (
 						<div key={index} className="col-4">
-							<div key={index} className="card card-block card-1">
+							<div className="card">
 								<img src="https://via.placeholder.com/150" className="card-img-top" alt="..." />
 								<div className="card-body">
 									<h5 className="card-title">{person.name}</h5>

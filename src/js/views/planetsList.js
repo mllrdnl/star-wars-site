@@ -18,11 +18,11 @@ export function PlanetsList() {
 	return (
 		<div className="container-fluid">
 			<h1>Planets</h1>
-			<div className="scrolling-wrapper row flex-row flex-nowrap mb-2">
+			<div className="flex-row d-inline-flex flex-nowrap">
 				{planets.map((planet, index) => {
 					return (
 						<div key={index} className="col-4">
-							<div key={index} className="card card-block card-2">
+							<div key={index} className="card">
 								<img src="..." className="card-img-top" alt="..." />
 								<div className="card-body">
 									<h5 className="card-title">{planet.name}</h5>
