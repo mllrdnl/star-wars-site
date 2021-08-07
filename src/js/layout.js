@@ -24,9 +24,11 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 	const [favorites, setFavorites] = React.useState([]);
 
+	const value = { favorites, setFavorites };
+
 	return (
 		<div className="d-flex flex-column">
-			<FavoritesContext.Provider value={{ favorites, setFavorites }}>
+			<FavoritesContext.Provider value={value}>
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
 						<Switch>

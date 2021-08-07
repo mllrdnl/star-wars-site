@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
-import { Context } from "../store/appContext";
+import { FavoritesContext } from "./favoritescontext";
 
 export function VehiclesList() {
 	const [vehicles, setVehicles] = useState([]);
+	const f = useContext(FavoritesContext);
 
 	React.useEffect(() => {
 		fetch("https://www.swapi.tech/api/vehicles/")
@@ -27,6 +27,25 @@ export function VehiclesList() {
 									<a className="btn btn-primary" href={"/vehicles/" + vehicle.uid} role="button">
 										Learn More!
 									</a>
+									{f.favorites.includes(vehicle.name) ? (
+										<button
+											onClick={() => {
+												f.setFavorites(f.favorites.filter(item => item !== vehicle.name));
+											}}
+											type="button"
+											className="btn btn-warning">
+											<i className="far fa-heart"></i>
+										</button>
+									) : (
+										<button
+											onClick={() => {
+												f.setFavorites([...f.favorites, vehicle.name]);
+											}}
+											type="button"
+											className="btn btn-outline-warning">
+											<i className="far fa-heart"></i>
+										</button>
+									)}
 								</p>
 								<p className="card-text">
 									<small className="text-muted">Last updated 3 mins ago</small>
