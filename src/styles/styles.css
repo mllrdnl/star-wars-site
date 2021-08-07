@@ -1,0 +1,12 @@
+/* .scrolling-wrapper{
+	overflow-x: auto;
+} */
+
+.body {
+    display: flex;
+}
+
+.card-block {
+    width: 400px;
+    height: 250px;
+}

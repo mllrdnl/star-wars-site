@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
+import "../../styles/styles.css";
+
 export function PeopleList() {
 	const [people, setPeople] = useState([]);
 
@@ -16,21 +18,23 @@ export function PeopleList() {
 	return (
 		<div className="container-fluid">
 			<h1>Characters</h1>
-			<div className="card-group">
+			<div className="scrolling-wrapper row flex-row flex-nowrap mb-2">
 				{people.map((person, index) => {
 					return (
-						<div key={index} className="card">
-							<img src="..." className="card-img-top" alt="..." />
-							<div className="card-body">
-								<h5 className="card-title">{person.name}</h5>
-								<p className="card-text">
-									<a className="btn btn-primary" href={"/people/" + person.uid} role="button">
-										Learn More!
-									</a>
-								</p>
-								<p className="card-text">
-									<small className="text-muted">Last updated 3 mins ago</small>
-								</p>
+						<div key={index} className="col-4">
+							<div key={index} className="card card-block card-1">
+								<img src="https://via.placeholder.com/150" className="card-img-top" alt="..." />
+								<div className="card-body">
+									<h5 className="card-title">{person.name}</h5>
+									<p className="card-text">
+										<a className="btn btn-primary" href={"/people/" + person.uid} role="button">
+											Learn More!
+										</a>
+									</p>
+									<p className="card-text">
+										<small className="text-muted">Last updated 3 mins ago</small>
+									</p>
+								</div>
 							</div>
 						</div>
 					);

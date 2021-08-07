@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
+import "../../styles/styles.css";
+
 export function PlanetsList() {
 	const [planets, setPlanets] = useState([]);
 
@@ -16,21 +18,23 @@ export function PlanetsList() {
 	return (
 		<div className="container-fluid">
 			<h1>Planets</h1>
-			<div className="card-group">
+			<div className="scrolling-wrapper row flex-row flex-nowrap mb-2">
 				{planets.map((planet, index) => {
 					return (
-						<div key={index} className="card">
-							<img src="..." className="card-img-top" alt="..." />
-							<div className="card-body">
-								<h5 className="card-title">{planet.name}</h5>
-								<p className="card-text">
-									<a className="btn btn-primary" href={"/planets/" + planet.uid} role="button">
-										Learn More!
-									</a>
-								</p>
-								<p className="card-text">
-									<small className="text-muted">Last updated 3 mins ago</small>
-								</p>
+						<div key={index} className="col-4">
+							<div key={index} className="card card-block card-2">
+								<img src="..." className="card-img-top" alt="..." />
+								<div className="card-body">
+									<h5 className="card-title">{planet.name}</h5>
+									<p className="card-text">
+										<a className="btn btn-primary" href={"/planets/" + planet.uid} role="button">
+											Learn More!
+										</a>
+									</p>
+									<p className="card-text">
+										<small className="text-muted">Last updated 3 mins ago</small>
+									</p>
+								</div>
 							</div>
 						</div>
 					);
