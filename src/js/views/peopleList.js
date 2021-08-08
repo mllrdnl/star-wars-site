@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { FavoritesContext } from "./favoritescontext";
 
 import "../../styles/styles.css";
+import "../../styles/peopleList.css";
 
 export function PeopleList() {
 	const params = useParams();
@@ -26,54 +27,58 @@ export function PeopleList() {
 
 	return (
 		<div className="container-fluid">
-			<div className="row mx-5">
+			<div className="row">
 				<h1>Characters</h1>
 			</div>
-			<div className="flex-row d-inline-flex flex-nowrap">
-				{people.map((person, index) => {
-					return (
-						<div key={index} className="col-4">
-							<div className="card">
-								<img src="https://via.placeholder.com/150" className="card-img-top" alt="..." />
-								<div className="card-body">
-									<h5 className="card-title">{person.name}</h5>
-									<p className="card-text">
-										Gender: {details !== null ? details.gender : null}
-										<br />
-										Hair Color:
-										<br />
-										Eye Color:
-										<br />
-									</p>
-									<div className="row">
-										<a className="btn btn-primary" href={"/people/" + person.uid} role="button">
-											Learn More!
-										</a>
-										{f.favorites.includes(person.name) ? (
-											<button
-												onClick={() => {
-													f.setFavorites(f.favorites.filter(item => item !== person.name));
-												}}
-												type="button"
-												className="btn btn-warning">
-												<i className="far fa-heart"></i>
-											</button>
-										) : (
-											<button
-												onClick={() => {
-													f.setFavorites([...f.favorites, person.name]);
-												}}
-												type="button"
-												className="btn btn-outline-warning">
-												<i className="far fa-heart"></i>
-											</button>
-										)}
+			<div className="row d-inline-flex w-100">
+				<div className="scrolling-wrapper-flexbox">
+					{people.map((person, index) => {
+						return (
+							<div key={index} className="col-4">
+								<div className="card">
+									<img src="https://via.placeholder.com/150" className="card-img-top" alt="..." />
+									<div className="card-body">
+										<h5 className="card-title">{person.name}</h5>
+										<p className="card-text">
+											Gender: {details !== null ? details.gender : null}
+											<br />
+											Hair Color:
+											<br />
+											Eye Color:
+											<br />
+										</p>
+										<div className="row">
+											<a className="btn btn-primary" href={"/people/" + person.uid} role="button">
+												Learn More!
+											</a>
+											{f.favorites.includes(person.name) ? (
+												<button
+													onClick={() => {
+														f.setFavorites(
+															f.favorites.filter(item => item !== person.name)
+														);
+													}}
+													type="button"
+													className="btn btn-warning">
+													<i className="far fa-heart"></i>
+												</button>
+											) : (
+												<button
+													onClick={() => {
+														f.setFavorites([...f.favorites, person.name]);
+													}}
+													type="button"
+													className="btn btn-outline-warning">
+													<i className="far fa-heart"></i>
+												</button>
+											)}
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
