@@ -20,3 +20,7 @@
 #nav {
     background-color: gray;
 }
+
+.navbar-brand {
+    padding-left: 80px;
+}

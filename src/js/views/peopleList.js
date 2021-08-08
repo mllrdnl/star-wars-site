@@ -37,29 +37,38 @@ export function PeopleList() {
 								<img src="https://via.placeholder.com/150" className="card-img-top" alt="..." />
 								<div className="card-body">
 									<h5 className="card-title">{person.name}</h5>
-									<p className="card-text">Gender: {details !== null ? details.gender : null}</p>
-									<a className="btn btn-primary" href={"/people/" + person.uid} role="button">
-										Learn More!
-									</a>
-									{f.favorites.includes(person.name) ? (
-										<button
-											onClick={() => {
-												f.setFavorites(f.favorites.filter(item => item !== person.name));
-											}}
-											type="button"
-											className="btn btn-warning">
-											<i className="far fa-heart"></i>
-										</button>
-									) : (
-										<button
-											onClick={() => {
-												f.setFavorites([...f.favorites, person.name]);
-											}}
-											type="button"
-											className="btn btn-outline-warning">
-											<i className="far fa-heart"></i>
-										</button>
-									)}
+									<p className="card-text">
+										Gender: {details !== null ? details.gender : null}
+										<br />
+										Hair Color:
+										<br />
+										Eye Color:
+										<br />
+									</p>
+									<div className="row">
+										<a className="btn btn-primary" href={"/people/" + person.uid} role="button">
+											Learn More!
+										</a>
+										{f.favorites.includes(person.name) ? (
+											<button
+												onClick={() => {
+													f.setFavorites(f.favorites.filter(item => item !== person.name));
+												}}
+												type="button"
+												className="btn btn-warning">
+												<i className="far fa-heart"></i>
+											</button>
+										) : (
+											<button
+												onClick={() => {
+													f.setFavorites([...f.favorites, person.name]);
+												}}
+												type="button"
+												className="btn btn-outline-warning">
+												<i className="far fa-heart"></i>
+											</button>
+										)}
+									</div>
 								</div>
 							</div>
 						</div>

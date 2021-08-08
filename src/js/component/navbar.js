@@ -8,7 +8,7 @@ export const Navbar = () => {
 	const f = useContext(FavoritesContext);
 	return (
 		<div id="nav" className="container-fluid">
-			<div className="flex-row d-inline-flex">
+			<div className="flex-row justify-content-space-between">
 				<a className="navbar-brand" href="#">
 					<img
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1024px-Star_Wars_Logo.svg.png"
@@ -17,15 +17,8 @@ export const Navbar = () => {
 					/>
 				</a>
 
-				<div className="dropdown">
-					<button
-						className="btn btn-secondary dropdown-toggle"
-						type="button"
-						id="dropdownMenuButton1"
-						data-bs-toggle="dropdown"
-						aria-expanded="false">
-						Favorites
-					</button>
+				<div className="dropdown my-auto">
+					<button className="btn btn-secondary dropdown-toggle">Favorites</button>
 					<ul className="dropdown-menu show" aria-labelledby="dropdownMenuButton1">
 						{f.favorites.map((item, index) => {
 							return (
