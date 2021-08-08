@@ -2,24 +2,21 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FavoritesContext } from "../views/favoritescontext";
 
+import "../../styles/styles.css";
+
 export const Navbar = () => {
 	const f = useContext(FavoritesContext);
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<div className="container-fluid">
+		<div id="nav" className="container-fluid">
+			<div className="flex-row d-inline-flex">
 				<a className="navbar-brand" href="#">
-					Navbar
+					<img
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1024px-Star_Wars_Logo.svg.png"
+						width="147"
+						height="92"
+					/>
 				</a>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarNavDropdown"
-					aria-controls="navbarNavDropdown"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon"></span>
-				</button>
+
 				<div className="dropdown">
 					<button
 						className="btn btn-secondary dropdown-toggle"
@@ -27,7 +24,7 @@ export const Navbar = () => {
 						id="dropdownMenuButton1"
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
-						Dropdown button
+						Favorites
 					</button>
 					<ul className="dropdown-menu show" aria-labelledby="dropdownMenuButton1">
 						{f.favorites.map((item, index) => {
@@ -42,6 +39,6 @@ export const Navbar = () => {
 					</ul>
 				</div>
 			</div>
-		</nav>
+		</div>
 	);
 };

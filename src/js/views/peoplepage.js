@@ -19,9 +19,12 @@ export function PeoplePage() {
 		<div className="container-fluid">
 			<div className="row">
 				<div className="col">
-					<p>Name: {people !== null ? people.name : null}</p>
+					<img src="https://via.placeholder.com/150" />
 				</div>
-				<div className="col"></div>
+				<div className="col">
+					<h1>Name: {people !== null ? people.name : null}</h1>
+					<p></p>
+				</div>
 			</div>
 		</div>
 	);
