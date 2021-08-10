@@ -10,7 +10,7 @@ export const Navbar = () => {
 	const [showMenu, setShowMenu] = useState("");
 
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
+		<nav className="navbar navbar-expand-lg w-100">
 			<div className="row w-100">
 				<div className="col-10">
 					<a className="navbar-brand" href="#">
@@ -32,8 +32,8 @@ export const Navbar = () => {
 						ariaLabel="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+					<div className="collapse navbar-collapse my-auto" id="navbarSupportedContent">
+						<ul className="navbar-nav my-auto mb-lg-0">
 							<li className="nav-item dropdown">
 								<a
 									onClick={e => {
@@ -49,7 +49,7 @@ export const Navbar = () => {
 									role="button"
 									dataBsToggle="dropdown"
 									ariaExpanded="false">
-									Dropdown
+									Favorites
 								</a>
 								<ul className={"dropdown-menu " + showMenu} ariaLabelledBy="navbarDropdown">
 									{f.favorites.map((item, index) => {

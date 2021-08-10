@@ -1,16 +1,16 @@
 
-/* .body {
-    display: flex;
-    background-image: url("../../img/paul-volkmer-_Apdet7E5yU-unsplash.jpg");
-    /* background-image: url("paul-volkmer-_Apdet7E5yU-unsplash.jpg"); */
-    /* background-repeat: repeat;
-}    */ 
-
-
-#nav {
-    background-color: gray;
+nav {
+    background-color: rgb(32, 32, 32);
 }
 
 .navbar-brand {
     padding-left: 80px;
+}
+
+.nav-link {
+    color: yellow;
+}
+
+#navbarDropdown {
+    margin-top: 30px;
 }
