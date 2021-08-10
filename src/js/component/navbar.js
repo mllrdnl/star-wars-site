@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FavoritesContext } from "../views/favoritescontext";
 
@@ -6,12 +6,19 @@ import "../../styles/styles.css";
 
 export const Navbar = () => {
 	const f = useContext(FavoritesContext);
+
+	const [showMenu, setShowMenu] = useState("");
+
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
 			<div className="row w-100">
 				<div className="col-10">
 					<a className="navbar-brand" href="#">
-						Navbar
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1024px-Star_Wars_Logo.svg.png"
+							width="147"
+							height="92"
+						/>
 					</a>
 				</div>
 				<div className="col-2">
@@ -29,6 +36,13 @@ export const Navbar = () => {
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							<li className="nav-item dropdown">
 								<a
+									onClick={e => {
+										if (showMenu == "") {
+											setShowMenu("show");
+										} else {
+											setShowMenu("");
+										}
+									}}
 									className="nav-link dropdown-toggle"
 									href="#"
 									id="navbarDropdown"
@@ -37,12 +51,16 @@ export const Navbar = () => {
 									ariaExpanded="false">
 									Dropdown
 								</a>
-								<ul className="dropdown-menu show" ariaLabelledBy="navbarDropdown">
-									<li>
-										<a className="dropdown-item" href="#">
-											Action
-										</a>
-									</li>
+								<ul className={"dropdown-menu " + showMenu} ariaLabelledBy="navbarDropdown">
+									{f.favorites.map((item, index) => {
+										return (
+											<li key={index}>
+												<a className="dropdown-item" href="#">
+													{item}
+												</a>
+											</li>
+										);
+									})}
 								</ul>
 							</li>
 						</ul>

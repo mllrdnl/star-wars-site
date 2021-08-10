@@ -14,6 +14,8 @@ import { VehiclesPage } from "./views/vehiclesPage";
 import injectContext from "./store/appContext";
 import { FavoritesContext } from "./views/favoritescontext";
 
+import "../styles/styles.css";
+
 // import { Navbar } from "./component/navbar";
 // import { Footer } from "./component/footer";
 

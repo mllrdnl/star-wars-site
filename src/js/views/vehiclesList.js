@@ -17,9 +17,11 @@ export function VehiclesList() {
 	}, []);
 
 	return (
-		<div className="container-fluid">
+		<div className="container">
 			<div className="row">
-				<h1>Vehicles</h1>
+				<div className="col-12">
+					<h1>Vehicles</h1>
+				</div>
 			</div>
 			<div className="row d-inline-flex w-100">
 				<div className="scrolling-wrapper-flexbox">
