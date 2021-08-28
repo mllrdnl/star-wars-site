@@ -21,8 +21,17 @@ export function PeopleList() {
 	return (
 		<div className="container">
 			<div className="row">
-				<div className="col-12">
+				<div className="col-10">
 					<h1>Characters</h1>
+				</div>
+				<div className="col-2 py-3 d-flex justify-content-end">
+					<button className="btn btn-outline-secondary">
+						{" "}
+						<i className="fas fa-chevron-left fa-lg"></i>
+					</button>
+					<button className="btn btn-outline-secondary ms-2">
+						<i className="fas fa-chevron-right fa-lg"></i>
+					</button>
 				</div>
 
 				<div className="col d-inline-flex w-100">
@@ -42,7 +51,7 @@ export function PeopleList() {
 												Eye Color:
 												<br />
 											</p>
-											<div className="row">
+											<div className="row justify-content-between px-2">
 												<a
 													className="btn btn-primary"
 													href={"/people/" + person.uid}
