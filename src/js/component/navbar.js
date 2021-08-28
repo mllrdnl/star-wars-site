@@ -13,7 +13,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-expand-lg w-100">
 			<div className="row w-100">
 				<div className="col-10">
-					<a className="navbar-brand" href="#">
+					<a className="navbar-brand" href="/">
 						<img
 							src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1024px-Star_Wars_Logo.svg.png"
 							width="147"

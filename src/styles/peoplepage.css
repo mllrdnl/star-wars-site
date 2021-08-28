@@ -3,3 +3,14 @@
     flex-direction: column;
    
 }
+
+p, td{
+    font-family: 'Righteous', cursive;
+    color: white;
+}
+
+th {
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-size: 20px;
+}

@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Navbar } from "../component/navbar";
 
+import "../../styles/peoplepage.css";
+
 export function PlanetsPage() {
 	const params = useParams();
 
