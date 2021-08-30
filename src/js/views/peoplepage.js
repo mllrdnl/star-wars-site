@@ -29,7 +29,7 @@ export function PeoplePage() {
 				</div>
 				<div className="col-5 justify-content-center">
 					<h1 className="text-center">{people !== null ? people.name : null}</h1>
-					<p className="text-center">
+					<p id="indiv_descrip" className="text-center">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris turpis urna, imperdiet dictum
 						imperdiet rhoncus, rhoncus id diam. Donec porttitor est at arcu lacinia, a tempor tortor ornare.
 						Duis porttitor pellentesque erat in malesuada. Aenean scelerisque ex non elementum vulputate.{" "}

@@ -12,7 +12,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg w-100">
 			<div className="row w-100">
-				<div className="col-10">
+				<div className="col-8 d-flex">
 					<a className="navbar-brand" href="/">
 						<img
 							src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1024px-Star_Wars_Logo.svg.png"
@@ -21,7 +21,12 @@ export const Navbar = () => {
 						/>
 					</a>
 				</div>
-				<div className="col-2">
+				<div className="col-2 d-flex my-auto justify-content-end px-0">
+					<a className="nav-link" href="#">
+						<i className="fas fa-search fa-lg"></i>
+					</a>
+				</div>
+				<div className="col-2 d-flex flex-row justify-content-start my-auto">
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -32,9 +37,9 @@ export const Navbar = () => {
 						ariaLabel="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse my-auto" id="navbarSupportedContent">
-						<ul className="navbar-nav my-auto mb-lg-0">
-							<li className="nav-item dropdown">
+					<div className="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul className="navbar-nav">
+							<li className="nav-item dropdown my-auto">
 								<a
 									onClick={e => {
 										if (showMenu == "") {
@@ -54,10 +59,21 @@ export const Navbar = () => {
 								<ul className={"dropdown-menu " + showMenu} ariaLabelledBy="navbarDropdown">
 									{f.favorites.map((item, index) => {
 										return (
-											<li key={index}>
+											<li className="d-flex" key={index}>
 												<a className="dropdown-item" href="#">
 													{item}
 												</a>
+												<button
+													className="btn btn-outline-warning"
+													onClick={() => {
+														const favindex = f.favorites.indexOf(item);
+														if (index > -1) {
+															f.favorites.splice(favindex, 1);
+															f.setFavorites([...f.favorites]);
+														}
+													}}>
+													<i className="far fa-trash-alt fa-xs"></i>
+												</button>
 											</li>
 										);
 									})}
@@ -65,6 +81,9 @@ export const Navbar = () => {
 							</li>
 						</ul>
 					</div>
+					<a className="nav-link" href="#">
+						<i className="far fa-user fa-lg"></i>
+					</a>
 				</div>
 			</div>
 		</nav>
