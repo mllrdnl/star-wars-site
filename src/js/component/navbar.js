@@ -26,7 +26,7 @@ export const Navbar = () => {
 						<i className="fas fa-search fa-lg"></i>
 					</a>
 				</div>
-				<div className="col-2 d-flex flex-row justify-content-start my-auto">
+				<div className="col d-flex flex-row my-auto">
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -39,7 +39,7 @@ export const Navbar = () => {
 					</button>
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav">
-							<li className="nav-item dropdown my-auto">
+							<li className="nav-item dropdown">
 								<a
 									onClick={e => {
 										if (showMenu == "") {
